@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application de Prédiction - Octobre Rose</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Octobre Rose - Prédiction Santé</h1>
+    </header>
+
+    <main>
+        <section class="prediction-form">
+            <h2>Prédiction du Cancer du Sein</h2>
+            <form action="/predict_cancer" method="post">
+                <div class="form-group">
+                    <label for="mean_radius">Rayon Moyen:</label>
+                    <input type="number" name="mean_radius" id="mean_radius" placeholder="Entrez le rayon moyen" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mean_texture">Texture Moyenne:</label>
+                    <input type="number" name="mean_texture" id="mean_texture" placeholder="Entrez la texture moyenne" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mean_perimeter">Périmètre Moyen:</label>
+                    <input type="number" name="mean_perimeter" id="mean_perimeter" placeholder="Entrez le périmètre moyen" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mean_area">Surface Moyenne:</label>
+                    <input type="number" name="mean_area" id="mean_area" placeholder="Entrez la surface moyenne" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mean_smoothness">Lissage Moyen:</label>
+                    <input type="number" name="mean_smoothness" id="mean_smoothness" placeholder="Entrez le lissage moyen" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mean_compactness">Compacité Moyenne:</label>
+                    <input type="number" name="mean_compactness" id="mean_compactness" placeholder="Entrez la compacité moyenne" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mean_concavity">Concavité Moyenne:</label>
+                    <input type="number" name="mean_concavity" id="mean_concavity" placeholder="Entrez la concavité moyenne" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mean_concave_points">Points Concaves Moyens:</label>
+                    <input type="number" name="mean_concave_points" id="mean_concave_points" placeholder="Entrez les points concaves moyens" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mean_symmetry">Symétrie Moyenne:</label>
+                    <input type="number" name="mean_symmetry" id="mean_symmetry" placeholder="Entrez la symétrie moyenne" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mean_fractal_dimension">Dimension Fractale Moyenne:</label>
+                    <input type="number" name="mean_fractal_dimension" id="mean_fractal_dimension" placeholder="Entrez la dimension fractale moyenne" required>
+                </div>
+
+                <input type="submit" value="Prédire le Cancer du Sein">
+            </form>
+        </section>
+
+        <section class="prediction-form">
+            <h2>Prédiction du Diabète</h2>
+            <form action="/predict_diabetes" method="post">
+                <div class="form-group">
+                    <label for="pregnancies">Grossesses:</label>
+                    <input type="number" name="pregnancies" id="pregnancies" placeholder="Entrez le nombre de grossesses" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="glucose">Glucose:</label>
+                    <input type="number" name="glucose" id="glucose" placeholder="Entrez le niveau de glucose" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="blood_pressure">Pression Artérielle:</label>
+                    <input type="number" name="blood_pressure" id="blood_pressure" placeholder="Entrez la pression artérielle" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="skin_thickness">Épaisseur de la Peau:</label>
+                    <input type="number" name="skin_thickness" id="skin_thickness" placeholder="Entrez l'épaisseur de la peau" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="insulin">Insuline:</label>
+                    <input type="number" name="insulin" id="insulin" placeholder="Entrez le niveau d'insuline" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="bmi">IMC:</label>
+                    <input type="number" name="bmi" id="bmi" placeholder="Entrez l'IMC" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="diabetes_pedigree_function">Fonction de Pédigrée Diabétique:</label>
+                    <input type="number" name="diabetes_pedigree_function" id="diabetes_pedigree_function" placeholder="Entrez la fonction de pédigrée" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Âge:</label>
+                    <input type="number" name="age" id="age" placeholder="Entrez l'âge" required>
+                </div>
+
+                <input type="submit" value="Prédire le Diabète">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Octobre Rose - Prédiction Santé</p>
+    </footer>
+</body>
+</html>
