@@ -2,126 +2,187 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application de Prédiction - Octobre Rose</title>
-    <link rel="stylesheet" href="/static/style.css">
-
-
+    <title>Prédiction du Cancer et du Diabète - Octobre Rose</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Octobre Rose - Prédiction Santé</h1>
-    </header>
-
-    <main>
-        <section class="prediction-form">
+    <div class="container">
+        <h1>Prédiction du Cancer du Sein et du Diabète</h1>
+        
+        <section class="cancer-section">
             <h2>Prédiction du Cancer du Sein</h2>
-            <form action="/predict_cancer" method="post">
+            <form action="/predict_cancer" method="POST" class="form-grid">
+                <!-- Ajout des 30 champs pour le cancer -->
                 <div class="form-group">
-                    <label for="mean_radius">Rayon Moyen:</label>
-                    <input type="number" name="mean_radius" id="mean_radius" placeholder="Entrez le rayon moyen" required>
+                    <label for="mean_radius">Rayon moyen :</label>
+                    <input type="number" name="mean_radius" required>
+                </div>
+                <div class="form-group">
+                    <label for="mean_texture">Texture moyenne :</label>
+                    <input type="number" name="mean_texture" required>
+                </div>
+                <div class="form-group">
+                    <label for="mean_perimeter">Circonférence moyenne :</label>
+                    <input type="number" name="mean_perimeter" required>
+                </div>
+                <div class="form-group">
+                    <label for="mean_area">Surface moyenne :</label>
+                    <input type="number" name="mean_area" required>
+                </div>
+                <div class="form-group">
+                    <label for="mean_smoothness">Lissité moyenne :</label>
+                    <input type="number" name="mean_smoothness" required>
+                </div>
+                <div class="form-group">
+                    <label for="mean_compactness">Compacité moyenne :</label>
+                    <input type="number" name="mean_compactness" required>
+                </div>
+                <div class="form-group">
+                    <label for="mean_concavity">Concavité moyenne :</label>
+                    <input type="number" name="mean_concavity" required>
+                </div>
+                <div class="form-group">
+                    <label for="mean_concave_points">Points concaves moyens :</label>
+                    <input type="number" name="mean_concave_points" required>
+                </div>
+                <div class="form-group">
+                    <label for="mean_symmetry">Symétrie moyenne :</label>
+                    <input type="number" name="mean_symmetry" required>
+                </div>
+                <div class="form-group">
+                    <label for="mean_fractal_dimension">Dimension fractale moyenne :</label>
+                    <input type="number" name="mean_fractal_dimension" required>
+                </div>
+                <div class="form-group">
+                    <label for="radius_error">Erreur de rayon :</label>
+                    <input type="number" name="radius_error" required>
+                </div>
+                <div class="form-group">
+                    <label for="texture_error">Erreur de texture :</label>
+                    <input type="number" name="texture_error" required>
+                </div>
+                <div class="form-group">
+                    <label for="perimeter_error">Erreur de circonférence :</label>
+                    <input type="number" name="perimeter_error" required>
+                </div>
+                <div class="form-group">
+                    <label for="area_error">Erreur de surface :</label>
+                    <input type="number" name="area_error" required>
+                </div>
+                <div class="form-group">
+                    <label for="smoothness_error">Erreur de lissité :</label>
+                    <input type="number" name="smoothness_error" required>
+                </div>
+                <div class="form-group">
+                    <label for="compactness_error">Erreur de compacité :</label>
+                    <input type="number" name="compactness_error" required>
+                </div>
+                <div class="form-group">
+                    <label for="concavity_error">Erreur de concavité :</label>
+                    <input type="number" name="concavity_error" required>
+                </div>
+                <div class="form-group">
+                    <label for="concave_points_error">Erreur de points concaves :</label>
+                    <input type="number" name="concave_points_error" required>
+                </div>
+                <div class="form-group">
+                    <label for="symmetry_error">Erreur de symétrie :</label>
+                    <input type="number" name="symmetry_error" required>
+                </div>
+                <div class="form-group">
+                    <label for="fractal_dimension_error">Erreur de dimension fractale :</label>
+                    <input type="number" name="fractal_dimension_error" required>
+                </div>
+                <div class="form-group">
+                    <label for="worst_radius">Pire rayon :</label>
+                    <input type="number" name="worst_radius" required>
+                </div>
+                <div class="form-group">
+                    <label for="worst_texture">Pire texture :</label>
+                    <input type="number" name="worst_texture" required>
+                </div>
+                <div class="form-group">
+                    <label for="worst_perimeter">Pire circonférence :</label>
+                    <input type="number" name="worst_perimeter" required>
+                </div>
+                <div class="form-group">
+                    <label for="worst_area">Pire surface :</label>
+                    <input type="number" name="worst_area" required>
+                </div>
+                <div class="form-group">
+                    <label for="worst_smoothness">Pire lissité :</label>
+                    <input type="number" name="worst_smoothness" required>
+                </div>
+                <div class="form-group">
+                    <label for="worst_compactness">Pire compacité :</label>
+                    <input type="number" name="worst_compactness" required>
+                </div>
+                <div class="form-group">
+                    <label for="worst_concavity">Pire concavité :</label>
+                    <input type="number" name="worst_concavity" required>
+                </div>
+                <div class="form-group">
+                    <label for="worst_concave_points">Pires points concaves :</label>
+                    <input type="number" name="worst_concave_points" required>
+                </div>
+                <div class="form-group">
+                    <label for="worst_symmetry">Pire symétrie :</label>
+                    <input type="number" name="worst_symmetry" required>
+                </div>
+                <div class="form-group">
+                    <label for="worst_fractal_dimension">Pire dimension fractale :</label>
+                    <input type="number" name="worst_fractal_dimension" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="mean_texture">Texture Moyenne:</label>
-                    <input type="number" name="mean_texture" id="mean_texture" placeholder="Entrez la texture moyenne" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="mean_perimeter">Périmètre Moyen:</label>
-                    <input type="number" name="mean_perimeter" id="mean_perimeter" placeholder="Entrez le périmètre moyen" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="mean_area">Surface Moyenne:</label>
-                    <input type="number" name="mean_area" id="mean_area" placeholder="Entrez la surface moyenne" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="mean_smoothness">Lissage Moyen:</label>
-                    <input type="number" name="mean_smoothness" id="mean_smoothness" placeholder="Entrez le lissage moyen" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="mean_compactness">Compacité Moyenne:</label>
-                    <input type="number" name="mean_compactness" id="mean_compactness" placeholder="Entrez la compacité moyenne" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="mean_concavity">Concavité Moyenne:</label>
-                    <input type="number" name="mean_concavity" id="mean_concavity" placeholder="Entrez la concavité moyenne" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="mean_concave_points">Points Concaves Moyens:</label>
-                    <input type="number" name="mean_concave_points" id="mean_concave_points" placeholder="Entrez les points concaves moyens" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="mean_symmetry">Symétrie Moyenne:</label>
-                    <input type="number" name="mean_symmetry" id="mean_symmetry" placeholder="Entrez la symétrie moyenne" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="mean_fractal_dimension">Dimension Fractale Moyenne:</label>
-                    <input type="number" name="mean_fractal_dimension" id="mean_fractal_dimension" placeholder="Entrez la dimension fractale moyenne" required>
-                </div>
-
-                <input type="submit" value="Prédire le Cancer du Sein">
+                <button type="submit" class="submit-button">Prédire Cancer du Sein</button>
             </form>
         </section>
 
-        <section class="prediction-form">
+        <section class="diabetes-section">
             <h2>Prédiction du Diabète</h2>
-            <form action="/predict_diabetes" method="post">
+            <form action="/predict_diabetes" method="POST" class="form-grid">
+                <!-- Ajout des 8 champs pour le diabète -->
                 <div class="form-group">
-                    <label for="pregnancies">Grossesses:</label>
-                    <input type="number" name="pregnancies" id="pregnancies" placeholder="Entrez le nombre de grossesses" required>
+                    <label for="pregnancies">Nombre de grossesses :</label>
+                    <input type="number" name="pregnancies" required>
+                </div>
+                <div class="form-group">
+                    <label for="glucose">Niveau de glucose :</label>
+                    <input type="number" name="glucose" required>
+                </div>
+                <div class="form-group">
+                    <label for="blood_pressure">Pression artérielle :</label>
+                    <input type="number" name="blood_pressure" required>
+                </div>
+                <div class="form-group">
+                    <label for="skin_thickness">Épaisseur de la peau :</label>
+                    <input type="number" name="skin_thickness" required>
+                </div>
+                <div class="form-group">
+                    <label for="insulin">Insuline :</label>
+                    <input type="number" name="insulin" required>
+                </div>
+                <div class="form-group">
+                    <label for="bmi">Indice de masse corporelle (BMI) :</label>
+                    <input type="number" name="bmi" required>
+                </div>
+                <div class="form-group">
+                    <label for="diabetes_pedigree_function">Fonction héréditaire du diabète :</label>
+                    <input type="number" name="diabetes_pedigree_function" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Âge :</label>
+                    <input type="number" name="age" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="glucose">Glucose:</label>
-                    <input type="number" name="glucose" id="glucose" placeholder="Entrez le niveau de glucose" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="blood_pressure">Pression Artérielle:</label>
-                    <input type="number" name="blood_pressure" id="blood_pressure" placeholder="Entrez la pression artérielle" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="skin_thickness">Épaisseur de la Peau:</label>
-                    <input type="number" name="skin_thickness" id="skin_thickness" placeholder="Entrez l'épaisseur de la peau" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="insulin">Insuline:</label>
-                    <input type="number" name="insulin" id="insulin" placeholder="Entrez le niveau d'insuline" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="bmi">IMC:</label>
-                    <input type="number" name="bmi" id="bmi" placeholder="Entrez l'IMC" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="diabetes_pedigree_function">Fonction de Pédigrée Diabétique:</label>
-                    <input type="number" name="diabetes_pedigree_function" id="diabetes_pedigree_function" placeholder="Entrez la fonction de pédigrée" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="age">Âge:</label>
-                    <input type="number" name="age" id="age" placeholder="Entrez l'âge" required>
-                </div>
-
-                <input type="submit" value="Prédire le Diabète">
+                <button type="submit" class="submit-button">Prédire Diabète</button>
             </form>
         </section>
-    </main>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Octobre Rose - Prédiction Santé</p>
+        <p>© 2024 Samba SY - Tous droits réservés</p>
     </footer>
 </body>
 </html>

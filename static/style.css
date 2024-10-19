@@ -1,98 +1,149 @@
-/* style.css */
-
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #fce4ec;
+    background-color: #fce4ec; /* Rose pâle */
+    color: #4a148c; /* Violet foncé pour le contraste */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-image: url('fond.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
 }
 
-header {
-    background-color: #d81b60;
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
     padding: 20px;
-    text-align: center;
-    color: white;
-    border-bottom: 5px solid #c2185b;
+    background-color: #ffffff; /* Blanc pour les formulaires */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ec407a; /* Bordure rose */
 }
 
 h1 {
-    font-size: 2.5em;
-    margin: 0;
-}
-
-main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.prediction-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+    text-align: center;
+    color: #e91e63; /* Rose vif */
+    font-size: 36px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif;
+    position: relative;
+}
+
+/* Ajout de fleurs autour du titre */
+h1::before, h1::after {
+    content: "🌸";
+    font-size: 50px;
+    position: absolute;
+    top: -10px;
+}
+
+h1::before {
+    left: -60px;
+}
+
+h1::after {
+    right: -60px;
 }
 
 h2 {
-    color: #d81b60;
+    color: #ad1457; /* Rose foncé */
+    font-size: 28px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    position: relative;
 }
 
-form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+/* Style des formulaires */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes pour les champs */
+    gap: 20px;
 }
 
 .form-group {
-    flex-basis: 48%;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
+    font-size: 16px;
+    color: #6a1b9a; /* Violet doux */
     margin-bottom: 5px;
-    color: #333;
-    font-weight: bold;
 }
 
-.form-group input[type="number"] {
-    width: 100%;
+.form-group input {
     padding: 10px;
-    border: 1px solid #d81b60;
-    border-radius: 5px;
+    border-radius: 8px;
+    border: 1px solid #ec407a; /* Bordure rose */
+    background-color: #f8bbd0; /* Arrière-plan rose clair */
     font-size: 16px;
-}
-
-.form-group input[type="number"]:focus {
-    border-color: #c2185b;
     outline: none;
+    transition: border 0.3s;
 }
 
-input[type="submit"] {
-    background-color: #d81b60;
-    color: white;
-    padding: 12px;
+.form-group input:focus {
+    border: 1px solid #d81b60; /* Accent rose foncé au focus */
+}
+
+/* Style du bouton de soumission */
+.submit-button {
+    grid-column: span 3; /* Pour que le bouton prenne toute la largeur */
+    padding: 15px;
+    background-color: #e91e63; /* Rose vif */
+    color: #fff;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    width: 100%;
+    border-radius: 8px;
+    font-size: 18px;
     cursor: pointer;
+    text-transform: uppercase;
     transition: background-color 0.3s;
-    margin-top: 20px;
 }
 
-input[type="submit"]:hover {
-    background-color: #c2185b;
+.submit-button:hover {
+    background-color: #c2185b; /* Rose plus foncé */
+}
+
+/* Section des prédictions */
+.cancer-section, .diabetes-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fce4ec; /* Arrière-plan rose pâle */
+    border-radius: 15px;
+    border: 1px solid #ec407a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #f8bbd0;
-    color: #333;
-    border-top: 5px solid #d81b60;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #e91e63; /* Rose vif */
+    color: white;
+    font-size: 14px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Fleurs décoratives autour des sous-titres */
+h2::before, h2::after {
+    content: "🌷";
+    font-size: 36px;
+    position: absolute;
+    top: -10px;
+}
+
+h2::before {
+    left: -40px;
+}
+
+h2::after {
+    right: -40px;
+}
+body {
+    background-image: url('fond.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
 }

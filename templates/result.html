@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediction Result</title>
+    <title>Résultat de Prédiction</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Prediction Result for {{ model }}</h1>
-    <p>The predicted result is: <strong>{{ result }}</strong></p>
-    <a href="/">Go Back</a>
+    <div class="container">
+        <h1>Résultat de Prédiction</h1>
+        <h2>{{ model }}</h2>
+        <p>Résultat : {{ result }}</p>
+        <a href="/">Faire une autre prédiction</a>
+    </div>
 </body>
 </html>
